@@ -1,18 +1,6 @@
-import { BlockRenderer } from "components";
-import { MainMenu } from "components/MainMenu";
 import { getPageStaticProps } from "utils/getPageStaticProps";
+import { Page } from "components/Page";
 
-export default function Home(props) {
-  return (
-    <div>
-      <MainMenu
-        items={props.mainMenuItems}
-        callToActionLabel={props.callToActionLabel}
-        callToActionDestination={props.callToActionDestination}
-      />
-      <BlockRenderer blocks={props.blocks} />
-    </div>
-  );
-}
+export default Page;
 
-export const getStaticProps = getPageStaticProps
+export const getStaticProps = getPageStaticProps;
