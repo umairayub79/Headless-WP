@@ -6,6 +6,8 @@ import { CallToActionButton } from "./CallToActionButton";
 import { Columns } from "./Columns";
 import { Column } from "./Column";
 import Image from "next/image";
+import { PostTitle } from "./PostTitle";
+import { PropertySearch } from "./PropertySearch";
 
 export const BlockRenderer = ({ blocks }) => {
   return blocks.map((block) => {
@@ -83,6 +85,18 @@ export const BlockRenderer = ({ blocks }) => {
       }
       case "core/block": {
         return <BlockRenderer key={block.id} blocks={block.innerBlocks} />;
+      }
+      case "core/post-title": {
+        return (
+          <PostTitle
+            key={block.id}
+            textAlign={block.attributes.textAlign}
+            level={block.attributes.level}
+          />
+        );
+      }
+      case 'acf/propertysearch' : {
+        return <PropertySearch key={block.id} />
       }
       default: {
         console.log("Unknow block, ", block);
