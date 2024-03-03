@@ -72,6 +72,7 @@ export const BlockRenderer = ({ blocks }) => {
       case "core/image": {
         return (
           <Image
+            unoptimized
             key={block.id}
             src={block.attributes.url}
             width={block.attributes.orignalWidth}
@@ -95,8 +96,8 @@ export const BlockRenderer = ({ blocks }) => {
           />
         );
       }
-      case 'acf/propertysearch' : {
-        return <PropertySearch key={block.id} />
+      case "acf/propertysearch": {
+        return <PropertySearch key={block.id} />;
       }
       default: {
         console.log("Unknow block, ", block);
