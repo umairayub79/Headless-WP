@@ -19,6 +19,7 @@ export const PropertyCard = ({
       <a className="border-2 border-slate-300 p-5 block bg-slate-100 hover:bg-slate-200">
         <div className="fllex w-full">
           <Image
+          unoptimized
             src={image}
             width="300px"
             height="200px"
